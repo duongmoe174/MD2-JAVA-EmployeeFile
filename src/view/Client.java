@@ -87,14 +87,13 @@ public class Client {
         int age = 0;
         boolean validAge = false;
         Scanner agePT = new Scanner(System.in);
-        while (validAge == false){
+        while (validAge == false) {
             System.out.println("Input age:");
-            inputStrAge= agePT.nextLine();
+            inputStrAge = agePT.nextLine();
             try {
                 age = Integer.parseInt(inputStrAge);
                 validAge = true;
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.err.println("Employee's age must be a Integer!");
             }
         }
@@ -117,13 +116,10 @@ public class Client {
             try {
                 workHour = Double.parseDouble(inputStrWorkHour);
                 validWorkHour = true;
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.err.println("Work hour must be a number!");
             }
         }
-
-
 
         PartTimeEmployee newPartTimeEmployee = new PartTimeEmployee(id, name, age, phone, email, workHour);
         return newPartTimeEmployee;
