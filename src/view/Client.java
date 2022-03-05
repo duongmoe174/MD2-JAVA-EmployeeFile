@@ -83,9 +83,21 @@ public class Client {
         System.out.println("Input name:");
         String name = namePT.nextLine();
 
+        String inputStrAge;
+        int age = 0;
+        boolean validAge = false;
         Scanner agePT = new Scanner(System.in);
-        System.out.println("Input age:");
-        int age = agePT.nextInt();
+        while (validAge == false){
+            System.out.println("Input age:");
+            inputStrAge= agePT.nextLine();
+            try {
+                age = Integer.parseInt(inputStrAge);
+                validAge = true;
+            }
+            catch (NumberFormatException e) {
+                System.err.println("Employee's age must be a Integer!");
+            }
+        }
 
         Scanner phonePT = new Scanner(System.in);
         System.out.println("Input phone:");
@@ -95,9 +107,23 @@ public class Client {
         System.out.println("Input email:");
         String email = emailPT.nextLine();
 
+        String inputStrWorkHour;
+        double workHour = 0;
+        boolean validWorkHour = false;
         Scanner workHourPT = new Scanner(System.in);
-        System.out.println("Input work hour:");
-        double workHour = workHourPT.nextDouble();
+        while (validWorkHour == false) {
+            System.out.println("Input work hour:");
+            inputStrWorkHour = workHourPT.nextLine();
+            try {
+                workHour = Double.parseDouble(inputStrWorkHour);
+                validWorkHour = true;
+            }
+            catch (Exception e) {
+                System.err.println("Work hour must be a number!");
+            }
+        }
+
+
 
         PartTimeEmployee newPartTimeEmployee = new PartTimeEmployee(id, name, age, phone, email, workHour);
         return newPartTimeEmployee;
@@ -159,9 +185,20 @@ public class Client {
                 System.out.println("Edit name:" + "(" + employeesListClient.get(index).getEmployeeFullName() + ")");
                 String editName = editNameFT.nextLine();
 
+                boolean valid = false;
+                String strInput;
+                int editAge = 0;
                 Scanner editAgeFT = new Scanner(System.in);
-                System.out.println("Edit age:" + "(" + employeesListClient.get(index).getEmployeeAge() + ")");
-                int editAge = editAgeFT.nextInt();
+                while (valid == false) {
+                    System.out.println("Edit age:" + "(" + employeesListClient.get(index).getEmployeeAge() + ")");
+                    strInput = editAgeFT.nextLine();
+                    try {
+                        editAge = Integer.parseInt(strInput);
+                        valid = true;
+                    } catch (NumberFormatException e) {
+                        System.err.println("You need input the integer ");
+                    }
+                }
 
                 Scanner editPhoneFT = new Scanner(System.in);
                 System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getEmployeePhone() + ")");
@@ -172,7 +209,7 @@ public class Client {
                 String editEmail = editEmailFT.nextLine();
 
                 Scanner editBonusFT = new Scanner(System.in);
-                System.out.println("Edit bonus:"+ "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBonus() + ")");
+                System.out.println("Edit bonus:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBonus() + ")");
                 double editBonus = editBonusFT.nextDouble();
 
                 Scanner editFineMoneyFT = new Scanner(System.in);
@@ -180,7 +217,7 @@ public class Client {
                 double editFineMoney = editFineMoneyFT.nextDouble();
 
                 Scanner editBasicSalaryFT = new Scanner(System.in);
-                System.out.println("Edit basic salary:"+ "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBasicSalary() + ")");
+                System.out.println("Edit basic salary:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBasicSalary() + ")");
                 double editBasicSalary = editBasicSalaryFT.nextDouble();
 
                 FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(editId, editName, editAge, editPhone, editEmail, editBonus, editFineMoney, editBasicSalary);
