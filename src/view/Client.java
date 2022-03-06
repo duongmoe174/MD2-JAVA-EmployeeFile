@@ -92,20 +92,9 @@ public class Client {
         System.out.println("Input email:");
         String email = emailPT.nextLine();
 
-        String inputStrWorkHour;
-        double workHour = 0;
-        boolean validWorkHour = false;
-        Scanner workHourPT = new Scanner(System.in);
-        while (validWorkHour == false) {
-            System.out.println("Input work hour:");
-            inputStrWorkHour = workHourPT.nextLine();
-            try {
-                workHour = Double.parseDouble(inputStrWorkHour);
-                validWorkHour = true;
-            } catch (Exception e) {
-                System.err.println("Work hour must be a number!");
-            }
-        }
+        System.out.println("Input work hour:");
+        double workHour = EmployeeManager.checkDouble();
+
 
         PartTimeEmployee newPartTimeEmployee = new PartTimeEmployee(id, name, age, phone, email, workHour);
         return newPartTimeEmployee;
@@ -116,26 +105,10 @@ public class Client {
         System.out.println("Input id:");
         String id = idFT.nextLine();
 
-        Scanner nameFT = new Scanner(System.in);
         System.out.println("Input name:");
-        String name = nameFT.nextLine();
+        String name = EmployeeManager.checkStringNotNull();
 
-        Scanner ageFT = new Scanner(System.in);
-        int age;
-        while (true) {
-            try {
-                System.out.println("Input age:");
-                age = Integer.parseInt(ageFT.nextLine());
-                if (age >= 0 && age <= 100) {
-                    break;
-                } else {
-                    System.err.println("0 <= age <= 100");
-                }
-            } catch (Exception e) {
-                System.err.println("Age must is a Integer!");
-            }
-        }
-
+      int age = EmployeeManager.checkAge();
 
         Scanner phoneFT = new Scanner(System.in);
         System.out.println("Input phone:");
@@ -145,17 +118,14 @@ public class Client {
         System.out.println("Input email:");
         String email = emailFT.nextLine();
 
-        Scanner inputBonus = new Scanner(System.in);
         System.out.println("Input bonus:");
-        double bonus = inputBonus.nextDouble();
+        double bonus = EmployeeManager.checkDouble();
 
-        Scanner inputFineMoney = new Scanner(System.in);
         System.out.println("Input fine money:");
-        double fineMoney = inputFineMoney.nextDouble();
+        double fineMoney = EmployeeManager.checkDouble();
 
-        Scanner inputBasicSalary = new Scanner(System.in);
         System.out.println("Input basic salary:");
-        double basicSalary = inputBasicSalary.nextDouble();
+        double basicSalary = EmployeeManager.checkDouble();
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(id, name, age, phone, email, bonus, fineMoney, basicSalary);
         return fullTimeEmployee;
