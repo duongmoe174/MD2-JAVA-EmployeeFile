@@ -1,6 +1,7 @@
 package controller;
 
 import model.Employee;
+import model.PartTimeEmployee;
 import storage.EmployeeFromFileBinary;
 import storage.IEployeeData;
 
@@ -51,5 +52,15 @@ public class EmployeeManager {
     public static double getAverageSalary() {
         double avg = getSumSalary()/employeeList.size();
         return avg;
+    }
+
+    public static double getSalaryForPartTime() {
+        int sum = 0;
+        for (int i = 0; i < employeeList.size(); i++) {
+            if(employeeList.get(i) instanceof PartTimeEmployee) {
+                sum += employeeList.get(i).getNetSalary();
+            }
+        }
+        return sum;
     }
 }

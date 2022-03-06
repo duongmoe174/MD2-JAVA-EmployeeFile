@@ -22,6 +22,7 @@ public class Client {
             System.out.println("2. Show all employee");
             System.out.println("3. Edit Employee");
             System.out.println("4. Show full time employee have lower salary");
+            System.out.println("5. Salary pay for part time employee.");
             System.out.println("0. Exit");
             choice = inputChoiceMain.nextInt();
             switch (choice) {
@@ -36,6 +37,9 @@ public class Client {
                     break;
                 case 4:
                     showLowerEmployeeFTSalary();
+                    break;
+                case 5:
+                    getSalaryForAllPartTime();
                     break;
                 case 0:
                     System.exit(0);
@@ -205,5 +209,10 @@ public class Client {
                 }
             }
         }
+    }
+    public static void getSalaryForAllPartTime() {
+        double result = EmployeeManager.getSalaryForPartTime();
+        System.out.println("All salary must pay for part time employee is:  " + result );
+
     }
 }
