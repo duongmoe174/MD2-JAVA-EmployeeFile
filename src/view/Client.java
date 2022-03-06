@@ -1,6 +1,7 @@
 package view;
 
 import controller.EmployeeManager;
+import controller.Validate;
 import model.Employee;
 import model.FullTimeEmployee;
 import model.PartTimeEmployee;
@@ -74,26 +75,23 @@ public class Client {
     }
 
     public static PartTimeEmployee createNewPartTimeEmployee() {
-        Scanner idPT = new Scanner(System.in);
+        Validate valid = new Validate();
         System.out.println("Input id:");
-        String id = idPT.nextLine();
+        String id = valid.checkStringNotNull();
 
-        Scanner namePT = new Scanner(System.in);
         System.out.println("Input name:");
-        String name = namePT.nextLine();
+        String name = valid.checkStringNotNull();
 
-        int age = EmployeeManager.checkAge();
+        int age = valid.checkAge();
 
-        Scanner phonePT = new Scanner(System.in);
         System.out.println("Input phone:");
-        String phone = phonePT.nextLine();
+        String phone = valid.checkStringNotNull();
 
-        Scanner emailPT = new Scanner(System.in);
         System.out.println("Input email:");
-        String email = emailPT.nextLine();
+        String email = valid.checkStringNotNull();
 
         System.out.println("Input work hour:");
-        double workHour = EmployeeManager.checkDouble();
+        double workHour = valid.checkDouble();
 
 
         PartTimeEmployee newPartTimeEmployee = new PartTimeEmployee(id, name, age, phone, email, workHour);
@@ -101,31 +99,29 @@ public class Client {
     }
 
     public static FullTimeEmployee createNewFullTimeEmployee() {
-        Scanner idFT = new Scanner(System.in);
+        Validate valid = new Validate();
         System.out.println("Input id:");
-        String id = idFT.nextLine();
+        String id = valid.checkStringNotNull();
 
         System.out.println("Input name:");
-        String name = EmployeeManager.checkStringNotNull();
+        String name = valid.checkStringNotNull();
 
-      int age = EmployeeManager.checkAge();
+        int age = valid.checkAge();
 
-        Scanner phoneFT = new Scanner(System.in);
         System.out.println("Input phone:");
-        String phone = phoneFT.nextLine();
+        String phone = valid.checkStringNotNull();
 
-        Scanner emailFT = new Scanner(System.in);
         System.out.println("Input email:");
-        String email = emailFT.nextLine();
+        String email = valid.checkStringNotNull();
 
         System.out.println("Input bonus:");
-        double bonus = EmployeeManager.checkDouble();
+        double bonus = valid.checkDouble();
 
         System.out.println("Input fine money:");
-        double fineMoney = EmployeeManager.checkDouble();
+        double fineMoney = valid.checkDouble();
 
         System.out.println("Input basic salary:");
-        double basicSalary = EmployeeManager.checkDouble();
+        double basicSalary = valid.checkDouble();
 
         FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(id, name, age, phone, email, bonus, fineMoney, basicSalary);
         return fullTimeEmployee;
