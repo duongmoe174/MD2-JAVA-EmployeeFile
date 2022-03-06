@@ -65,11 +65,11 @@ public abstract class Employee implements Serializable {
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId='" + id + '\'' +
-                ", employeeFullName='" + fullName + '\'' +
-                ", employeeAge=" + age +
-                ", employeePhone='" + phone + '\'' +
-                ", employeeEmail='" + email + '\'' +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

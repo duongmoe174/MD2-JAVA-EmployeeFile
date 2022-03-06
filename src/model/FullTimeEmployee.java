@@ -48,11 +48,11 @@ public class FullTimeEmployee extends Employee{
     @Override
     public String toString() {
         return "FullTimeEmployee{" +
-                "employeeId='" + getId() + '\'' +
-                ", employeeFullName='" + getFullName() + '\'' +
-                ", employeeAge=" + getAge() +
-                ", employeePhone='" + getPhone() + '\'' +
-                ", employeeEmail='" + getEmail() + '\'' +
+                "id='" + getId() + '\'' +
+                ", fullName='" + getFullName() + '\'' +
+                ", age=" + getAge() +
+                ", phone='" + getPhone() + '\'' +
+                ", email='" + getEmail() + '\'' +
                 ", bonus=" + bonus +
                 ", fineMoney=" + fineMoney +
                 ", basicSalary=" + basicSalary +

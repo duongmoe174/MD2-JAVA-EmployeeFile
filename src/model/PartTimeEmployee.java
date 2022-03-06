@@ -29,11 +29,11 @@ public class PartTimeEmployee extends Employee {
     @Override
     public String toString() {
         return "PartTimeEmployee{" +
-                "employeeId='" + getId() + '\'' +
-                ", employeeFullName='" + getFullName() + '\'' +
-                ", employeeAge=" + getAge() +
-                ", employeePhone='" + getPhone() + '\'' +
-                ", employeeEmail='" + getEmail() + '\'' +
+                "id='" + getId() + '\'' +
+                ", fullName='" + getFullName() + '\'' +
+                ", age=" + getAge() +
+                ", phone='" + getPhone() + '\'' +
+                ", email='" + getEmail() + '\'' +
                 ", workHour=" + workHour +
                 '}';
     }
