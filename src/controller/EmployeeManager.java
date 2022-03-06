@@ -7,7 +7,6 @@ import storage.IEployeeData;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EmployeeManager {
     public static IEployeeData employeeData = new EmployeeFromFileBinary();
@@ -32,7 +31,7 @@ public class EmployeeManager {
         return -1;
     }
 
-    public static void editEmployeeByIndex (int index, Employee employee) {
+    public static void editEmployeeByIndex(int index, Employee employee) {
         employeeList.set(index, employee);
         try {
             employeeData.writeFile(employeeList);
@@ -41,8 +40,8 @@ public class EmployeeManager {
         }
     }
 
-    public static double getSumSalary () {
-        double sum =0;
+    public static double getSumSalary() {
+        double sum = 0;
         for (int i = 0; i < employeeList.size(); i++) {
             sum += employeeList.get(i).getNetSalary();
         }
@@ -50,14 +49,14 @@ public class EmployeeManager {
     }
 
     public static double getAverageSalary() {
-        double avg = getSumSalary()/employeeList.size();
+        double avg = getSumSalary() / employeeList.size();
         return avg;
     }
 
     public static double getSalaryForPartTime() {
         int sum = 0;
         for (int i = 0; i < employeeList.size(); i++) {
-            if(employeeList.get(i) instanceof PartTimeEmployee) {
+            if (employeeList.get(i) instanceof PartTimeEmployee) {
                 sum += employeeList.get(i).getNetSalary();
             }
         }

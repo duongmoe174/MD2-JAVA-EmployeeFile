@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Comparator;
+
 public class FullTimeEmployee extends Employee{
     private double bonus;
     private double fineMoney;

@@ -7,11 +7,13 @@ import model.FullTimeEmployee;
 import model.PartTimeEmployee;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Client {
-    private static ArrayList<Employee> employeesListClient = EmployeeManager.employeeList;
+    private static List<Employee> employeesListClient = EmployeeManager.employeeList;
 
     public static void main(String[] args) {
         Scanner inputChoiceMain = new Scanner(System.in);
@@ -205,14 +207,14 @@ public class Client {
             if (employeesListClient.get(i) instanceof FullTimeEmployee) {
                 if (employeesListClient.get(i).getNetSalary() < EmployeeManager.getAverageSalary()) {
                     System.out.println(serial + ". " + employeesListClient.get(i).getFullName());
-                    serial ++;
+                    serial++;
                 }
             }
         }
     }
+
     public static void getSalaryForAllPartTime() {
         double result = EmployeeManager.getSalaryForPartTime();
-        System.out.println("All salary must pay for part time employee is:  " + result );
-
+        System.out.println("All salary must pay for part time employee is:  " + result);
     }
 }
