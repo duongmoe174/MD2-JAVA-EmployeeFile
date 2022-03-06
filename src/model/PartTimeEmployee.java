@@ -13,8 +13,8 @@ public class PartTimeEmployee extends Employee {
         return result;
     }
 
-    public PartTimeEmployee(String employeeId, String employeeFullName, int employeeAge, String employeePhone, String employeeEmail, double workHour) {
-        super(employeeId, employeeFullName, employeeAge, employeePhone, employeeEmail);
+    public PartTimeEmployee(String id, String fullName, int age, String phone, String email, double workHour) {
+        super(id, fullName, age, phone, email);
         this.workHour = workHour;
     }
 
@@ -29,11 +29,11 @@ public class PartTimeEmployee extends Employee {
     @Override
     public String toString() {
         return "PartTimeEmployee{" +
-                "employeeId='" + getEmployeeId() + '\'' +
-                ", employeeFullName='" + getEmployeeFullName() + '\'' +
-                ", employeeAge=" + getEmployeeAge() +
-                ", employeePhone='" + getEmployeePhone() + '\'' +
-                ", employeeEmail='" + getEmployeeEmail() + '\'' +
+                "employeeId='" + getId() + '\'' +
+                ", employeeFullName='" + getFullName() + '\'' +
+                ", employeeAge=" + getAge() +
+                ", employeePhone='" + getPhone() + '\'' +
+                ", employeeEmail='" + getEmail() + '\'' +
                 ", workHour=" + workHour +
                 '}';
     }

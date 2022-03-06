@@ -3,61 +3,61 @@ package model;
 import java.io.Serializable;
 
 public abstract class Employee implements Serializable {
-    private String employeeId;
-    private String employeeFullName;
-    private int employeeAge;
-    private String employeePhone;
-    private String employeeEmail;
+    private String id;
+    private String fullName;
+    private int age;
+    private String phone;
+    private String email;
 
     public Employee() {
     }
 
-    public Employee(String employeeId, String employeeFullName, int employeeAge, String employeePhone, String employeeEmail) {
-        this.employeeId = employeeId;
-        this.employeeFullName = employeeFullName;
-        this.employeeAge = employeeAge;
-        this.employeePhone = employeePhone;
-        this.employeeEmail = employeeEmail;
+    public Employee(String id, String fullName, int age, String phone, String email) {
+        this.id = id;
+        this.fullName = fullName;
+        this.age = age;
+        this.phone = phone;
+        this.email = email;
     }
 
-    public String getEmployeeId() {
-        return employeeId;
+    public String getId() {
+        return id;
     }
 
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getEmployeeFullName() {
-        return employeeFullName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setEmployeeFullName(String employeeFullName) {
-        this.employeeFullName = employeeFullName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public int getEmployeeAge() {
-        return employeeAge;
+    public int getAge() {
+        return age;
     }
 
-    public void setEmployeeAge(int employeeAge) {
-        this.employeeAge = employeeAge;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getEmployeePhone() {
-        return employeePhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setEmployeePhone(String employeePhone) {
-        this.employeePhone = employeePhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getEmployeeEmail() {
-        return employeeEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public abstract double getNetSalary();
@@ -65,11 +65,11 @@ public abstract class Employee implements Serializable {
     @Override
     public String toString() {
         return "Employee{" +
-                "employeeId='" + employeeId + '\'' +
-                ", employeeFullName='" + employeeFullName + '\'' +
-                ", employeeAge=" + employeeAge +
-                ", employeePhone='" + employeePhone + '\'' +
-                ", employeeEmail='" + employeeEmail + '\'' +
+                "employeeId='" + id + '\'' +
+                ", employeeFullName='" + fullName + '\'' +
+                ", employeeAge=" + age +
+                ", employeePhone='" + phone + '\'' +
+                ", employeeEmail='" + email + '\'' +
                 '}';
     }
 }

@@ -8,8 +8,8 @@ public class FullTimeEmployee extends Employee{
     public FullTimeEmployee() {
     }
 
-    public FullTimeEmployee(String employeeId, String employeeFullName, int employeeAge, String employeePhone, String employeeEmail, double bonus, double fineMoney, double basicSalary) {
-        super(employeeId, employeeFullName, employeeAge, employeePhone, employeeEmail);
+    public FullTimeEmployee(String id, String fullName, int age, String phone, String email, double bonus, double fineMoney, double basicSalary) {
+        super(id, fullName, age, phone, email);
         this.bonus = bonus;
         this.fineMoney = fineMoney;
         this.basicSalary = basicSalary;
@@ -48,11 +48,11 @@ public class FullTimeEmployee extends Employee{
     @Override
     public String toString() {
         return "FullTimeEmployee{" +
-                "employeeId='" + getEmployeeId() + '\'' +
-                ", employeeFullName='" + getEmployeeFullName() + '\'' +
-                ", employeeAge=" + getEmployeeAge() +
-                ", employeePhone='" + getEmployeePhone() + '\'' +
-                ", employeeEmail='" + getEmployeeEmail() + '\'' +
+                "employeeId='" + getId() + '\'' +
+                ", employeeFullName='" + getFullName() + '\'' +
+                ", employeeAge=" + getAge() +
+                ", employeePhone='" + getPhone() + '\'' +
+                ", employeeEmail='" + getEmail() + '\'' +
                 ", bonus=" + bonus +
                 ", fineMoney=" + fineMoney +
                 ", basicSalary=" + basicSalary +

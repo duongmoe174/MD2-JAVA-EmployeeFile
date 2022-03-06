@@ -138,18 +138,18 @@ public class Client {
             int index = EmployeeManager.getEmployeeById(id);
             if (employeesListClient.get(index) instanceof FullTimeEmployee) {
                 System.out.println("Editing full time employee...");
-                System.out.println("Edit id:" + "(" + employeesListClient.get(index).getEmployeeId() + ")");
+                System.out.println("Edit id:" + "(" + employeesListClient.get(index).getId() + ")");
                 String editId = valid.checkStringNotNull();
 
-                System.out.println("Edit name:" + "(" + employeesListClient.get(index).getEmployeeFullName() + ")");
-                String editName = valid.checkStringNotNull()
+                System.out.println("Edit name:" + "(" + employeesListClient.get(index).getFullName() + ")");
+                String editName = valid.checkStringNotNull();
 
                 int editAge = valid.checkAge();
 
-                System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getEmployeePhone() + ")");
+                System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getPhone() + ")");
                 String editPhone = valid.checkStringNotNull();
 
-                System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmployeeEmail() + ")");
+                System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmail() + ")");
                 String editEmail = valid.checkStringNotNull();
 
                 System.out.println("Edit bonus:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBonus() + ")");
@@ -166,19 +166,19 @@ public class Client {
             }
             if (employeesListClient.get(index) instanceof PartTimeEmployee) {
                 System.out.println("Editing part time employee...");
-                System.out.println("Edit id:" + "(" + employeesListClient.get(index).getEmployeeId() + ")");
+                System.out.println("Edit id:" + "(" + employeesListClient.get(index).getId() + ")");
                 String editId = valid.checkStringNotNull();
 
-                System.out.println("Edit name:" + "(" + employeesListClient.get(index).getEmployeeFullName() + ")");
+                System.out.println("Edit name:" + "(" + employeesListClient.get(index).getFullName() + ")");
                 String editName = valid.checkStringNotNull();
 
-                System.out.println("Edit age:" + "(" + employeesListClient.get(index).getEmployeeAge() + ")");
+                System.out.println("Edit age:" + "(" + employeesListClient.get(index).getAge() + ")");
                 int editAge = valid.checkAge();
 
-                System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getEmployeePhone() + ")");
+                System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getPhone() + ")");
                 String editPhone = valid.checkStringNotNull();
 
-                System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmployeeEmail() + ")");
+                System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmail() + ")");
                 String editEmail = valid.checkStringNotNull();
 
                 System.out.println("Edit work hour:" + "(" + ((PartTimeEmployee) employeesListClient.get(index)).getWorkHour() + ")");

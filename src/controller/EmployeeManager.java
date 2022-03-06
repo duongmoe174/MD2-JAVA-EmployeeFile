@@ -24,7 +24,7 @@ public class EmployeeManager {
     public static int getEmployeeById(String employeeId) {
         for (int i = 0; i < employeeList.size(); i++) {
             Employee employee = employeeList.get(i);
-            if (employee.getEmployeeId().equals(employeeId)) {
+            if (employee.getId().equals(employeeId)) {
                 return i;
             }
         }
