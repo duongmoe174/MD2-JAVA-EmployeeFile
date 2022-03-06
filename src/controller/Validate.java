@@ -27,7 +27,7 @@ public class Validate {
         while (true) {
             try {
                 number = Double.parseDouble(checkDouble.nextLine());
-                if (number > 0) {
+                if (number >= 0) {
                     break;
                 } else {
                     System.err.println("Do not input negative number!");
