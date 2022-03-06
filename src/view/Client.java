@@ -21,6 +21,7 @@ public class Client {
             System.out.println("1. Add new employee");
             System.out.println("2. Show all employee");
             System.out.println("3. Edit Employee");
+            System.out.println("4. Show full time employee have lower salary");
             System.out.println("0. Exit");
             choice = inputChoiceMain.nextInt();
             switch (choice) {
@@ -32,6 +33,9 @@ public class Client {
                     break;
                 case 3:
                     editEmployeeById();
+                    break;
+                case 4:
+                    showLowerEmployeeFTSalary();
                     break;
                 case 0:
                     System.exit(0);
@@ -186,6 +190,19 @@ public class Client {
 
                 PartTimeEmployee partTimeEmployee = new PartTimeEmployee(editId, editName, editAge, editPhone, editEmail, editWorkHour);
                 EmployeeManager.editEmployeeByIndex(index, partTimeEmployee);
+            }
+        }
+    }
+
+    public static void showLowerEmployeeFTSalary() {
+        System.out.println("Full time employee have salary lower than average company's salary:");
+        int serial = 1;
+        for (int i = 0; i < employeesListClient.size(); i++) {
+            if (employeesListClient.get(i) instanceof FullTimeEmployee) {
+                if (employeesListClient.get(i).getNetSalary() < EmployeeManager.getAverageSalary()) {
+                    System.out.println(serial + ". " + employeesListClient.get(i).getFullName());
+                    serial ++;
+                }
             }
         }
     }

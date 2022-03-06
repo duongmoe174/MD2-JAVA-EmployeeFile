@@ -39,4 +39,17 @@ public class EmployeeManager {
             e.printStackTrace();
         }
     }
+
+    public static double getSumSalary () {
+        double sum =0;
+        for (int i = 0; i < employeeList.size(); i++) {
+            sum += employeeList.get(i).getNetSalary();
+        }
+        return sum;
+    }
+
+    public static double getAverageSalary() {
+        double avg = getSumSalary()/employeeList.size();
+        return avg;
+    }
 }
