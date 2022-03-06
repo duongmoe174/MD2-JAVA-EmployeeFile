@@ -128,9 +128,9 @@ public class Client {
     }
 
     public static void editEmployeeById() {
-        Scanner inputIdFT = new Scanner(System.in);
+        Validate valid = new Validate();
         System.out.println("Input employee's id need edit: ");
-        String id = inputIdFT.nextLine();
+        String id = valid.checkStringNotNull();
         int check = -1;
         if (EmployeeManager.getEmployeeById(id) == check) {
             System.err.println("Can't find the id!");
@@ -138,77 +138,51 @@ public class Client {
             int index = EmployeeManager.getEmployeeById(id);
             if (employeesListClient.get(index) instanceof FullTimeEmployee) {
                 System.out.println("Editing full time employee...");
-                Scanner editIdFT = new Scanner(System.in);
                 System.out.println("Edit id:" + "(" + employeesListClient.get(index).getEmployeeId() + ")");
-                String editId = editIdFT.nextLine();
+                String editId = valid.checkStringNotNull();
 
-                Scanner editNameFT = new Scanner(System.in);
                 System.out.println("Edit name:" + "(" + employeesListClient.get(index).getEmployeeFullName() + ")");
-                String editName = editNameFT.nextLine();
+                String editName = valid.checkStringNotNull()
 
-                boolean valid = false;
-                String strInput;
-                int editAge = 0;
-                Scanner editAgeFT = new Scanner(System.in);
-                while (valid == false) {
-                    System.out.println("Edit age:" + "(" + employeesListClient.get(index).getEmployeeAge() + ")");
-                    strInput = editAgeFT.nextLine();
-                    try {
-                        editAge = Integer.parseInt(strInput);
-                        valid = true;
-                    } catch (NumberFormatException e) {
-                        System.err.println("You need input the integer ");
-                    }
-                }
+                int editAge = valid.checkAge();
 
-                Scanner editPhoneFT = new Scanner(System.in);
                 System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getEmployeePhone() + ")");
-                String editPhone = editPhoneFT.nextLine();
+                String editPhone = valid.checkStringNotNull();
 
-                Scanner editEmailFT = new Scanner(System.in);
                 System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmployeeEmail() + ")");
-                String editEmail = editEmailFT.nextLine();
+                String editEmail = valid.checkStringNotNull();
 
-                Scanner editBonusFT = new Scanner(System.in);
                 System.out.println("Edit bonus:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBonus() + ")");
-                double editBonus = editBonusFT.nextDouble();
+                double editBonus = valid.checkDouble();
 
-                Scanner editFineMoneyFT = new Scanner(System.in);
                 System.out.println("Edit fine money:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getFineMoney() + ")");
-                double editFineMoney = editFineMoneyFT.nextDouble();
+                double editFineMoney = valid.checkDouble();
 
-                Scanner editBasicSalaryFT = new Scanner(System.in);
                 System.out.println("Edit basic salary:" + "(" + ((FullTimeEmployee) employeesListClient.get(index)).getBasicSalary() + ")");
-                double editBasicSalary = editBasicSalaryFT.nextDouble();
+                double editBasicSalary = valid.checkDouble();
 
                 FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(editId, editName, editAge, editPhone, editEmail, editBonus, editFineMoney, editBasicSalary);
                 EmployeeManager.editEmployeeByIndex(index, fullTimeEmployee);
             }
             if (employeesListClient.get(index) instanceof PartTimeEmployee) {
                 System.out.println("Editing part time employee...");
-                Scanner editIdPT = new Scanner(System.in);
                 System.out.println("Edit id:" + "(" + employeesListClient.get(index).getEmployeeId() + ")");
-                String editId = editIdPT.nextLine();
+                String editId = valid.checkStringNotNull();
 
-                Scanner editNamePT = new Scanner(System.in);
                 System.out.println("Edit name:" + "(" + employeesListClient.get(index).getEmployeeFullName() + ")");
-                String editName = editNamePT.nextLine();
+                String editName = valid.checkStringNotNull();
 
-                Scanner editAgePT = new Scanner(System.in);
                 System.out.println("Edit age:" + "(" + employeesListClient.get(index).getEmployeeAge() + ")");
-                int editAge = editAgePT.nextInt();
+                int editAge = valid.checkAge();
 
-                Scanner editPhonePT = new Scanner(System.in);
                 System.out.println("Edit phone number:" + "(" + employeesListClient.get(index).getEmployeePhone() + ")");
-                String editPhone = editPhonePT.nextLine();
+                String editPhone = valid.checkStringNotNull();
 
-                Scanner editEmailPT = new Scanner(System.in);
                 System.out.println("Edit email:" + "(" + employeesListClient.get(index).getEmployeeEmail() + ")");
-                String editEmail = editEmailPT.nextLine();
+                String editEmail = valid.checkStringNotNull();
 
-                Scanner editWorkHourPT = new Scanner(System.in);
                 System.out.println("Edit work hour:" + "(" + ((PartTimeEmployee) employeesListClient.get(index)).getWorkHour() + ")");
-                double editWorkHour = editWorkHourPT.nextDouble();
+                double editWorkHour = valid.checkDouble();
 
                 PartTimeEmployee partTimeEmployee = new PartTimeEmployee(editId, editName, editAge, editPhone, editEmail, editWorkHour);
                 EmployeeManager.editEmployeeByIndex(index, partTimeEmployee);
