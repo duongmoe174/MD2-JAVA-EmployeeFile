@@ -5,10 +5,9 @@ import model.Employee;
 import model.FullTimeEmployee;
 import model.PartTimeEmployee;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
+
 
 public class Client {
     private static ArrayList<Employee> employeesListClient = EmployeeManager.employeeList;
@@ -83,20 +82,7 @@ public class Client {
         System.out.println("Input name:");
         String name = namePT.nextLine();
 
-        String inputStrAge;
-        int age = 0;
-        boolean validAge = false;
-        Scanner agePT = new Scanner(System.in);
-        while (validAge == false) {
-            System.out.println("Input age:");
-            inputStrAge = agePT.nextLine();
-            try {
-                age = Integer.parseInt(inputStrAge);
-                validAge = true;
-            } catch (NumberFormatException e) {
-                System.err.println("Employee's age must be a Integer!");
-            }
-        }
+        int age = EmployeeManager.checkAge();
 
         Scanner phonePT = new Scanner(System.in);
         System.out.println("Input phone:");
@@ -135,8 +121,21 @@ public class Client {
         String name = nameFT.nextLine();
 
         Scanner ageFT = new Scanner(System.in);
-        System.out.println("Input age:");
-        int age = ageFT.nextInt();
+        int age;
+        while (true) {
+            try {
+                System.out.println("Input age:");
+                age = Integer.parseInt(ageFT.nextLine());
+                if (age >= 0 && age <= 100) {
+                    break;
+                } else {
+                    System.err.println("0 <= age <= 100");
+                }
+            } catch (Exception e) {
+                System.err.println("Age must is a Integer!");
+            }
+        }
+
 
         Scanner phoneFT = new Scanner(System.in);
         System.out.println("Input phone:");
